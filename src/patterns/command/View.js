@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import Calculator from "./Calculator";
+// import Calculator from "./Calculator";
+import OrderManager from "./OrderManager";
 
 function View() {
   useEffect(() => {}, []);
