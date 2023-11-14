@@ -1,6 +1,7 @@
-import Command from "./patterns/command/View";
+// import Command from "./patterns/command/View";
+import Factory from "./patterns/factory/View";
 function App() {
-  return <Command />;
+  return <Factory />;
 }
 
 export default App;
