@@ -1,56 +1,33 @@
-/* eslint-disable default-case */
-const Types = {
-  DEVELOPER: "developer",
-  TESTER: "teseter",
+const createEmployee = ({ firstName, lastName, email = "email@email.com" }) => {
+  return {
+    firstName,
+    lastName,
+    email,
+    fullName() {
+      console.log(`Welcome ${this.firstName} ${this.lastName}`);
+    },
+  };
 };
 
-class Developer {
-  constructor(name) {
-    this.name = name;
-    this.type = Types.DEVELOPER;
-  }
+function ask() {
+  console.log(`How are ${this.firstName}`);
 }
 
-class Tester {
-  constructor(name) {
-    this.name = name;
-    this.type = Types.TESTER;
-  }
-}
-
-class EmployeeFactory {
-  constructor() {
-    this.employees = [];
-  }
-
-  create(name, type) {
-    let emp = null;
-    switch (type) {
-      case Types.DEVELOPER:
-        emp = new Developer(name);
-        this.employees.push(emp);
-        return emp;
-
-      case Types.TESTER:
-        emp = new Tester(name);
-        this.employees.push(emp);
-        return emp;
-    }
-  }
-}
-
-function print(idx) {
-  console.log(`${idx + 1} - Welcome ${this.name}, your type is (${this.type})`);
-}
-
-const factory = new EmployeeFactory();
-
-factory.create("Ali", Types.DEVELOPER);
-factory.create("Omar", Types.DEVELOPER);
-factory.create("Daoud", Types.TESTER);
-factory.create("Reem", Types.TESTER);
-factory.create("Salim", Types.DEVELOPER);
-
-factory.employees?.forEach((emp, idx) => {
-  print.call(emp, idx);
+const employee1 = createEmployee({
+  firstName: "Salim",
+  lastName: "Nader",
 });
+
+const employee2 = createEmployee({
+  firstName: "Reem",
+  lastName: "Omar",
+  email: "reem@reem.com",
+});
+
+employee1.fullName();
+
+ask.call(employee1);
+
+employee2.fullName();
+
+ask.call(employee2);
