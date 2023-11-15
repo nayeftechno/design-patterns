@@ -1,7 +1,8 @@
 // import Command from "./patterns/command/View";
-import Factory from "./patterns/factory/View";
+// import Factory from "./patterns/factory/View";
+import Flyweight from "./patterns/flyweight/View";
 function App() {
-  return <Factory />;
+  return <Flyweight />;
 }
 
 export default App;
