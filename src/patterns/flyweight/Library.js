@@ -24,7 +24,6 @@ const addBook = (title, author, isbn, year) => {
     year,
   };
   bookList.push(book);
-  return book;
 };
 
 addBook("Harry Potter", "JK Rowling", "AB123", "2000");
