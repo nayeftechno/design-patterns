@@ -12,7 +12,7 @@ class Book {
 const createBook = (title, author, isbn) => {
   const book = isbnNumbers.has(isbn);
   if (book) {
-    return book;
+    return;
   } else {
     isbnNumbers.add(isbn);
     return new Book(title, author, isbn);
@@ -36,3 +36,5 @@ addBook("The Great Gatsby", "F. Scott Fitzgerald", "EF567", "2020");
 
 console.log(`Number of books :${isbnNumbers.size}`);
 console.log(`Number of copies :${bookList.length}`);
+
+console.log(bookList);
