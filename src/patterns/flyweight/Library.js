@@ -10,8 +10,7 @@ class Book {
 }
 
 const createBook = (title, author, isbn) => {
-  const book = isbnNumbers.has(isbn);
-  if (book) {
+  if (isbnNumbers.has(isbn)) {
     return;
   } else {
     isbnNumbers.add(isbn);
