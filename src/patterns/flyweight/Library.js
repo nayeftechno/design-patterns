@@ -2,25 +2,25 @@ const isbnNumbers = new Set();
 const bookList = [];
 
 class Book {
-  constructor(title, author, isbn) {
+  constructor({ title, author, isbn }) {
     this.title = title;
     this.author = author;
     this.isbn = isbn;
   }
 }
 
-const createBook = (title, author, isbn) => {
+const createBook = ({ title, author, isbn }) => {
   if (isbnNumbers.has(isbn)) {
     return;
   } else {
     isbnNumbers.add(isbn);
-    return new Book(title, author, isbn);
+    return new Book({ title, author, isbn });
   }
 };
 
 const addBook = (title, author, isbn, year) => {
   const book = {
-    ...createBook(title, author, isbn),
+    ...createBook({ title, author, isbn }),
     year,
   };
   bookList.push(book);
