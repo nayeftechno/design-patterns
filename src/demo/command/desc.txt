@@ -1,0 +1,33 @@
+Take different operations (methods) & encapsulate them into individual (Seperated) commands
+That has execute & undo methods.
+
+So We can decouple objects that executes a certain task from the object that calls the method.
+
+*****************************************************
+
+On the OrderManager class, we have access to the 
+placeOrder, 
+trackOrder 
+and cancelOrder methods. 
+It would be totally valid JavaScript to just use these methods directly!
+
+However, there are downsides to invoking the methods directly on the manager instance.
+ It could happen that we decide to rename certain methods later on, or the functionality of the methods change.
+
+Say that instead of calling it placeOrder, we now rename it to addOrder! 
+This would mean that we would have to make sure that we don’t call the placeOrder method anywhere 
+in our codebase, which could be very tricky in larger applications. Instead, 
+we want to decouple the methods from the manager object, 
+and create separate command functions for each command!
+
+*****************************************************
+
+pros
+
+1 - We can perform do & undo functionality.
+2 - We can combine different commands.
+3 - There is no need to change the original code.
+
+cons
+
+1 - adds more boilerplates to existing applications.
