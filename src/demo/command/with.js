@@ -7,10 +7,9 @@ class OrderManager {
   excuteCommand(command, other) {
     this.orders = command.excute(this.orders, other);
     this.history.push(command);
-    return this;
   }
 
-  print() {
+  printOrders() {
     console.log(this.orders);
   }
 }
@@ -29,22 +28,42 @@ class PlaceOrderCommand {
   }
 }
 
-class CancelOrderCommand {}
+class CancelOrderCommand {
+  constructor(id) {
+    this.id = id;
+  }
 
-class TrackOrderCommand {}
+  excute(orders, other) {
+    other && console.log(other);
+    console.log(`You have cancelled order ${this.id}`);
+    return orders.filter((_id) => _id !== this.id);
+  }
+}
+
+class TrackOrderCommand {
+  constructor(id) {
+    this.id = id;
+  }
+
+  excute(orders, other) {
+    other && console.log(other);
+    console.log(`You will recieve your order ${this.id} in 20 minutes`);
+    return orders;
+  }
+}
 
 const orderManager = new OrderManager();
 
-orderManager
-  .excuteCommand(new PlaceOrderCommand("10", "order-10"), {
-    address: "123",
-  })
-  .print();
+orderManager.excuteCommand(new PlaceOrderCommand("100", "order-100"));
 
-orderManager
-  .excuteCommand(new PlaceOrderCommand("20", "order-20"), {
-    address: "123",
-  })
-  .print();
+orderManager.excuteCommand(new PlaceOrderCommand("200", "order-200"));
+
+orderManager.excuteCommand(new PlaceOrderCommand("300", "order-300"));
+
+orderManager.excuteCommand(new CancelOrderCommand("300"));
+
+orderManager.excuteCommand(new CancelOrderCommand("100"));
+
+orderManager.excuteCommand(new TrackOrderCommand("200"));
 
 export default {};

@@ -13,8 +13,8 @@ class OrderManager {
     this.orders = this.orders.filter((_id) => _id !== id);
   }
 
-  trackOrder() {
-    console.log(`You will recieve your order in 20 minutes`);
+  trackOrder(id) {
+    console.log(`You will recieve your order ${id} in 20 minutes`);
   }
 }
 
