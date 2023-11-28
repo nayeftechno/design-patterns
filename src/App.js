@@ -1,8 +1,7 @@
-// import Command from "./patterns/command/View";
-// import Factory from "./patterns/factory/View";
-import Flyweight from "./patterns/flyweight/View";
+import command from "./demo/command/with";
+
 function App() {
-  return <Flyweight />;
+  return <h1>Design Patterns</h1>;
 }
 
 export default App;
