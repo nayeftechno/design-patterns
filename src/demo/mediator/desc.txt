@@ -8,3 +8,14 @@ In JS the mediator is often nothing more, object literal or a function.
 use case :-
 
 1 - Chat-Room.
+
+
+In NodeJs the middleware function, is a function that have access to request object & response object & the next
+middleware function in the application.
+
+
+app.use((req,res,next)=>{
+    next();
+},(req, res,next)=>{
+    next();
+});
