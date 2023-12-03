@@ -1,0 +1,10 @@
+With mediator pattern, the components are communicate with each other over a central point
+rather than communicate directly with each other.
+
+
+In JS the mediator is often nothing more, object literal or a function.
+
+
+use case :-
+
+1 - Chat-Room.
