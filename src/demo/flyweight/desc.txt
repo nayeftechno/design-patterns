@@ -1,0 +1,4 @@
+Flyweight pattern used to save memory when creating a large number of similar objects,
+i'ts considered as a Memory Optimization technique.
+
+In JS We use proptotypal-inheritance to solve problem of Memory misuse.
