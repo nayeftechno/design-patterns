@@ -1,0 +1,1 @@
+Mixins are ojects that We can use in order to add reusable functionality, to other objects or classes without using inheritance
