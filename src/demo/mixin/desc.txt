@@ -1,1 +1,6 @@
-Mixins are ojects that We can use in order to add reusable functionality, to other objects or classes without using inheritance
+Mixins are ojects that We can use in order to add reusable functionality, 
+to other objects or classes without using inheritance.
+
+
+
+with Mixins We can solve the issue of multiple inheritance in JS.
