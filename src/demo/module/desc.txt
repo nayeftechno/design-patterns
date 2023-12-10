@@ -1,0 +1,3 @@
+Allows you to split your code into smaller reusable pieces.
+
+with dynamic imports, We loads modules on demand, at run time not load time.
