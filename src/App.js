@@ -1,15 +1,26 @@
-function App() {
-  const handleClick = () => {
-    import("./demo/module/math").then(({ add, multiply }) => {
-      console.log(add(4, 6, 7));
-    });
-  };
+import { useEffect } from "react";
+import observable from "./demo/observer/Observer";
+
+export default function App() {
+  function eat(data) {
+    console.log(`eat ${data}`);
+  }
+  function walk(data) {
+    console.log(`walk ${data}`);
+  }
+  function speak(data) {
+    console.log(`speak ${data}`);
+  }
+
+  useEffect(() => {
+    observable.subscribe(eat);
+    observable.subscribe(walk);
+    observable.subscribe(speak);
+  }, []);
+
   return (
-    <div style={{ padding: "30px" }}>
-      <h1>Look before U leap</h1>
-      <button onClick={handleClick}>Click Me</button>
+    <div style={{ border: "1px solid" }}>
+      <button onClick={() => observable.notify("Eat")}>Eat</button>
     </div>
   );
 }
-
-export default App;
