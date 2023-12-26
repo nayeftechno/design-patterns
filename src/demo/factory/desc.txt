@@ -5,7 +5,7 @@ Factory functions, are functions that used to create a new objects with use the 
 
 pros
 1 - create multiple smaller objects that share the same properties.
-2 - more simblier than classes.
+2 - more simplier than classes.
 
 cons
 1 - it's more memory efficiency to create a new class instance,
