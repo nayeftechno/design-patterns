@@ -18,6 +18,10 @@ export default function App() {
     observable.subscribe(speak);
   }, []);
 
+  useEffect(() => {
+    console.log("RENDER");
+  });
+
   return (
     <div style={{ border: "1px solid" }}>
       <button onClick={() => observable.notify("Eat")}>Eat</button>
