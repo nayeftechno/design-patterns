@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { DataContext } from "./contexts/DataContext";
 
 export default function Main() {
+  const { posts, getPosts } = useContext(DataContext);
   useEffect(() => {
     console.log("MAIN");
   });
 
-  return <h4>Main</h4>;
+  return <h4 onClick={getPosts}>Main {posts?.length}</h4>;
 }
